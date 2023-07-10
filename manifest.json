@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Volume Control",
+  "version": "1.0",
+  "description": "A Chrome extension to control the volume of a specific tab.",
+  "permissions": ["tabs", "activeTab", "http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.spankbang.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "page_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    },
+    "default_title": "Tab Volume Control",
+    "default_popup": "popup.html"
+  }
+}
